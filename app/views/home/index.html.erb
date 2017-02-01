@@ -1,1 +1,11 @@
-home#index page
+<h1>"Welcome to Locations and Events"</h1>
+<% @locations.each do |location| %>
+  <div class="location">
+    <h3>City: <%= location.city %></h3>
+    <%= location.description %><br />
+    <%= link_to image_tag(location.image, class: "location"), location %>
+    <p>Event: <% @events.each do |event| %>
+      <p><%= event.name %></p>
+    <% end %>
+  </div>
+  <% end %>
